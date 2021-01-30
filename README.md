@@ -1,26 +1,6 @@
-Alpine Linux aports repository
+Alpino Linux aports repository
 ==============================
 
-This repository contains the APKBUILD files for each and every
-Alpine Linux package, along with the required patches and scripts,
-if any.
+This is a fork of the official Alpine Linux aports repository. The sole intent of this fork is to allow users to add initialization scripts to custom Alpine Linux ISOs.
 
-It also contains some extra files and directories related to testing
-(and therefore, building) those packages on GitLab (via GitLab CI).
-
-If you want to contribute, please read the
-[contributor guide](https://wiki.alpinelinux.org/wiki/Alpine_Linux:Contribute)
-and feel free to either submit a git patch on the Alpine aports
-mailing list (<alpine-aports@lists.alpinelinux.org>), or to submit a
-merge request on [GitLab](https://gitlab.alpinelinux.org/alpine/aports).
-
-
-Git Hooks
----------
-
-You can find some useful git hooks in the `.githooks` directory.
-To use them, run the following command after cloning this repository:
-
-```sh
-git config --local core.hooksPath .githooks
-```
+The initialization scripts can do pretty much anything you want, so you can have customized Live Alpine Linux that sets up the system just after you boot it.
