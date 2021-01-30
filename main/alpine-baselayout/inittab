@@ -1,7 +1,10 @@
 # /etc/inittab
 
-::sysinit:/sbin/openrc sysinit
-::sysinit:/sbin/openrc boot
+
+#::sysinit:/sbin/openrc sysinit
+#::sysinit:/sbin/openrc boot
+::sysinit:/bin/sh -c 'for _d in "/media/usb" "/media/cdrom"; do _f="$_d/ali/init.sh"; if [ -e $_f ]; then $_f; break; fi done && exit'
+
 ::wait:/sbin/openrc default
 
 # Set up a couple of getty's
@@ -19,5 +22,6 @@ tty6::respawn:/sbin/getty 38400 tty6
 ::ctrlaltdel:/sbin/reboot
 
 # Stuff to do before rebooting
+::shutdown:/usr/local/bin/persistency-save.sh
 ::shutdown:/sbin/openrc shutdown
 
